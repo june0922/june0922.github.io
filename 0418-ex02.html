@@ -14,16 +14,35 @@
 <script type="text/babel">
 
 /* different ways to create functional components */
-
-
+/* different ways to create functional components */ 
+const OkButton = () => { 
+ return <button className="button is-primary">Ok</button> 
+} 
+const AnythingButton = () => { 
+ const label = "Anything"; 
+ return <button className="button">{label}</button> 
+}
+/* Combining components */ 
+const SimpleHeader = function() { 
+ return ( 
+ <div className="buttons"> 
+ <OkButton /> 
+ <AnythingButton /> 
+ </div> 
+ ) 
+} 
 
 /* Combining components */
 
+ReactDOM.createRoot(container).render(<SimpleHeader />);
+  
+
+const alternate = React.createElement( 'h2', {className: 'is-size-1'}, 
+ 'This is an alternate version of a component' 
+); 
 
 const container = document.querySelector('#react-container');   
 /* You will also need to modify this line */
-ReactDOM.createRoot(container).render( ); 
-  
 </script> 
         
         

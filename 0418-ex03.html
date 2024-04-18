@@ -14,29 +14,45 @@
 <script type="text/babel">
 
 /* different ways to create functional components */
-const AnythingButton = () => {
-  return <button className="button">anything</button>
-}
+const AnythingButton = (props) => { 
+ const cls = "button is-" + props.size; 
+ return <button className={cls}>{props.label}</button> 
+} 
 
-
+const img = { 
+ classes: "image is-128x128", 
+ filename: "images/AAPL.svg", 
+ alt: "Apple Logo" 
+} 
+const container = document.querySelector('#react-container'); 
+/* You will also need to modify this line */ 
+const root = ReactDOM.createRoot(container);
+root.render( <SimpleHeader logo={img} /> );
 
 /* Combining components */
+
+
+const Logo = ({filename,alt,classes}) => {
+return (
+<img src={filename} alt={alt} className={classes} /> 
+)
+}
 const SimpleHeader = function(props) {
-  return (
-    <header>
-      <div className="buttons">
-        <AnythingButton />
-      </div>
-    </header>
-  )
+return (
+<header>
+ <Logo filename={props.logo.filename} alt={props.logo.alt} 
+ classes={props.logo.classes} /> 
+<div className="buttons">
+<AnythingButton label="Something" size="large" />
+</div>
+</header>
+)
 }
 
 
 
-const container = document.querySelector('#react-container');   
-/* You will also need to modify this line */
-const root = ReactDOM.createRoot(container);
-root.render( <SimpleHeader  /> ); 
+
+
   
 </script> 
         
