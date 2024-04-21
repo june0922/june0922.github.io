@@ -22,35 +22,26 @@
         <article className="box media ">
           <div className="media-left">
             <figure className="image is-128x128">
-              <img src={"images/" + props.symbol + ".svg"} />
+              <img src={"images/" + props.data.symbol + ".svg"} />
             </figure>
           </div>
           <div className="media-content">
-            <h2>{props.children}</h2>
-            <h2></h2>
-            <p><strong>Symbol:</strong> {props.symbol}</p>
-            <p><strong>Sector:</strong> {props.sector}</p>
-            <p><strong>HQ:</strong> {props.hq}</p>
+            <h2>{props.data.name}</h2>
+            <p><strong>Symbol:</strong> {props.data.symbol}</p>
+            <p><strong>Sector:</strong> {props.data.sector}</p>
+            <p><strong>HQ:</strong> {props.data.hq}</p>
           </div>
         </article>
       );
     };
 
-
+    { comps.map((c, indx) => <Company data={c} key={indx} />) }
 
     const container = document.querySelector('#react-container');
     ReactDOM.createRoot(container).render(
       <section className="content box">
-        <Company data={{
-          name: "Facebook", symbol: "FB",
-          sector: "Internet Software",
-          hq: "Menlo Park, California"
-        }} />
-        <Company data={{
-          name: "Apple", symbol: "AAPL",
-          sector: "Information Technology", 
-          hq:"Cupertino, California"}} /> 
-  </section>
+        {comps.map(c => <Company data={c} />)}
+      </section>
     );
 
   </script>
