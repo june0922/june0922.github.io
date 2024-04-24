@@ -1,102 +1,81 @@
 <!DOCTYPE html>
-<html lang="ko">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    console.log(clear);
-
-
-  function $ (selector){
-      return  document.querySelector(selector);
-  }
-  $(body).css.('backGound-Color','red');
-
-
-  </script>
-  <style>
-    /* 노말라이즈 시작 */
-    body,
-    ul,
-    li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* 노말라이즈 끝 */
-    /* 라이브러리 시작 */
-    .con {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .bg-red {
-      background-color: red;
-    }
-
-    .bg-blue {
-      background-color: blue;
-    }
-
-    .block {
-      display: block;
-    }
-
-    .float-grid::after {
-      content: "";
-      display: block;
-      clear: both;
-    }
-
-    .float-grid>* {
-      float:left;
-      box-sizing: border-box;
-    }
-
-    .flex-jc-c{
-      justify-content:center;
-    }
-    .flex-al-c{
-      align-items: center;
-    }
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab 11a</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">   
+    <!--The React JS libraries -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!--Initially, we will use the babel run-time library to convert JSX in the browser --> 
+    <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>    
     
+<script type="text/babel">
+
+/* different ways to create functional components */
+const AnythingButton = (props) => { 
+ const cls = "button is-" + props.size; 
+ return <button className={cls}>{props.label}</button> 
+} 
+
+<AnythingButton label="Something" size="large" /> 
+
+const img = { 
+ classes: "image is-128x128", 
+ filename: "images/AAPL.svg", 
+ alt: "Apple Logo" 
+} 
+
+/* Combining components */
+const SimpleHeader = function(props) {
+return (
+<header>
+ <Logo filename={props.logo.filename} alt={props.logo.alt} 
+ classes={props.logo.classes} /> 
+<div className="buttons">
+<AnythingButton label="Something" size="large" />
+</div>
+</header>
+)
+}
+
+const Logo = ({filename,alt,classes}) => {
+return (
+<img src={filename} alt={alt} className={classes} /> 
+)
 
 
-    /* 라이브러리 끝 */
-
-    /* 문제 구성 시작 */
-    /* 커스텀 시작 */
-    :root {
-      --site-width: 1200px;
-    }
-
-    .con-min-width {
-      min-width: var(--site-width);
-      padding: 0 10px;
-    }
-
-    .con {
-      width: var(--site-width);
-      margin:0 auto;
-    }
-
-    /* 커스텀 끝 */
-
-    /* 문제 구성 끝 */
-
+const container = document.querySelector('#react-container');   
+/* You will also need to modify this line */
+const root = ReactDOM.createRoot(container);
+root.render( <SimpleHeader  /> ); 
+  
+</script> 
+        
+        
+  </head>
+  <body>
     
-  </style>
-</head>
+    <main class="container">
+        <section class="hero is-primary is-small has-background-link">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">
+                React Tutorial
+              </h1>
+              <h2 class="subtitle">
+                Component Parameters
+              </h2>
+            </div>
+          </div>
+        </section>
+      
+        <section id='react-container' class="content box "></section>
+        
+    </main>
+    
+   
 
-<body>
-
-
+  </body>
 </html>
