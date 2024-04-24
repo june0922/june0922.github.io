@@ -59,10 +59,26 @@
         .flex-al-c {
             align-items: center;
         }
-         /* 라이브러리 끝 */
+
+        /* 라이브러리 끝 */
+        /* 커스텀 시작 */
+        :root {
+            --site-width: 800px;
+        }
+
+        .con-min-width {
+            min-width: var(--site-width);
+            padding: 0 10px;
+        }
+
+        .con {
+            width: var(--site-width);
+            margin: 0 auto;
+        }
+
+        /* 커스텀 끝 */
 
 
-         
         a {
             display: block;
             padding: 30px;
@@ -114,7 +130,8 @@
 </head>
 
 <body>
-    <section>
+    <section class="con-min-width">
+        <section class = "con">
         <nav class="float-grid">
             <div><a href="#">ITEM1</a></div>
             <div><a href="#">ITEM2</a></div>
@@ -127,5 +144,6 @@
             <div><a href="#">ITEM5</a></div>
             <div><a href="#">ITEM6</a></div>
         </nav>
+    </section>
     </section>
 </body>
