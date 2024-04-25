@@ -1,42 +1,119 @@
 <!DOCTYPE html>
+<html>
+
+</html>
 
 <head>
-    <title>sflkjes</title>
-    <script>
-        const btns = document.querySelectorAll("button");
-        btns.addEventListener("click", function ()){
-            if (btns.document.addEventListener)
+    <title>
+        Title
+    </title>
+    <style>
+        /* 노말라이즈 시작 */
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
 
-    </script>
-    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    </style>
-</head>
+        /* 노말라이즈 끝 */
+        /* 라이브러리 시작 */
+        .con {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-<body>
-    <form method="post" action="login.php" id="loginForm">
-        <label class="icon" for="username"><i class="fa fa-user fa-fw">
-            </i></label>
-        <input type="text" name="username" id="username" placeholder="UserName" />
-        <label class="icon" for="email"><i class="fa fa-envelope fa-fw">
-            </i></label>
-        <input type="text" name="email" id="email" placeholder="Email" />
-        <label class="icon" for="pass"><i class="fa fa-key fa-fw"></i>
-        </label>
-        <input type="password" name="pass" id="pass" placeholder="Password" />
-        <label class="icon" for="region"><i class="fa fa-home fa-fw"></i>
-        </label>
-        <input type="radio" name="region" id="europe" value="Europe" class="bigRadio"><span>Europe</span>
-        <input type="radio" name="region" id="usa" value="United States" class="bigRadio"><span>United States</span>
-        <label class="icon" for="payment">
-            <i class="fa fa-fw" id="payLabel"></i></label>
-        <select name="payment" id="payment"></select>
-        <label class="icon" id="long" for="save">
-            <i class="fa fa-database fa-fw"></i> Remember Me</label>
-        <input type="checkbox" name="save" id="save" class="bigCheckBox" />
-        <button type="submit"><i class="fa fa-reply fa-fw"></i> Register
-        </button>
-    </form>
-    <div id="errors" class="hidden"></div>
-</body>
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .float-grid::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .float-grid>* {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .flex-jc-c {
+            justify-content: center;
+        }
+
+        .flex-al-c {
+            align-items: center;
+        }
+
+        /* 라이브러리 끝 */
+        /* 커스텀 시작 */
+        :root {
+            --site-width: 800px;
+        }
+
+        .con-min-width {
+            min-width: var(--site-width);
+            padding: 0 10px;
+        }
+
+        .con {
+            width: var(--site-width);
+            margin: 0 auto;
+        }
+        
+        header{
+            text-align: center;
+            border:1px solid red;
+        }
+        section{
+            display:inline-block;
+            width:800px;
+            padding:0 10px;
+            border-radius: 10px;
+            background-color: blue;
+        }
+        div{
+            display:inline-block;
+        }
+        a{
+            display:block;
+            padding:30px;
+            background-color: red;;
+        }
+
+
+        /* 커스텀 끝 */
+        </style>
+
+        <body>
+            <header>
+                <section>
+                    <div><a href="#">ITEM1</a></div>
+                    <div><a href="#">ITEM2</a></div>
+                    <div><a href="#">ITEM3</a>
+                        <nav><a href="#">item1</a></nav>
+                        <nav><a href="#">item2</a></nav>
+                        <nav><a href="#">item3</a></nav>
+                    </div>
+
+                    <div><a href="#">ITEM4</a></div>
+                    <div><a href="#">ITEM5</a></div>
+                    <div><a href="#">ITEM6</a></div>
+                </section>
+            </header>
+        </body>
