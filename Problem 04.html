@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+<head>
+    <title>
+        Title
+    </title>
+    <style>
+        /* 노말라이즈 시작 */
+        body
+        {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 노말라이즈 끝 */
+        /* 라이브러리 시작 */
+        .con {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+     
+
+        .float-grid::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .float-grid>* {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .flex-jc-c {
+            justify-content: center;
+        }
+
+        .flex-al-c {
+            align-items: center;
+        }
+
+        /* 라이브러리 끝 */
+        /* 커스텀 시작 */
+        :root {
+            --site-width: 800px;
+        }
+
+        .con-min-width {
+            min-width: var(--site-width);
+            padding: 0 10px;
+        }
+
+        .con {
+            width: var(--site-width);
+            margin: 0 auto;
+        }
+        
+        
+        .section-1{
+            display:inline-block;
+            width:70%;
+            padding:0 10px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #800000;
+        }
+        section div{
+            display:inline-block;
+        }
+        section div:nth-child(2n) > a{
+            display:block;
+            padding:15px;
+            background-color: #FF0003;
+        }
+        section div:nth-child(2n+1) > a{
+            display:block;
+            padding:15px;
+            background-color: #800000;
+        }
+
+
+
+        header{
+            text-align: left;
+            border:2px solid black;
+        }
+        img{
+            padding-right: 30px;
+            position: relative;
+        }
+        nav{
+            display: inline-block;
+        }
+        .float{
+            height: 20%;
+            width: 20%;
+            background-color: gray;
+             float:left;
+        }
+       .margin{
+            margin-left: 20%;
+          
+          
+       }
+
+        /* 커스텀 끝 */
+        </style>
+
+        <body>
+            
+            <header>
+                <nav class ="float-grid">
+                <img src="c:\Users\INHA\Downloads\Inha_University_logotype.png" alt="">
+                </nav>
+                <section class = "float-grid section-1">
+                    <div><a href="#">교육</a></div>
+                    <div><a href="#">입학/취업</a></div>
+                    <div><a href="#">산학/연구</a></div>
+                    <div><a href="#">학사</a></div>
+                    <div><a href="#">대학생활</a></div>
+                    <div><a href="#">인하소식</a></div>
+                    <div><a href="#">인하소개</a></div>
+                </section>
+            </header>
+            <section class="section-2">
+            <article class = "float">
+                <ul>
+                <li>뉴스</li>
+                <li>소식</li>
+                <li>연구</li>
+                <li>서비스</li>
+                <li>SNS</li>
+            </ul>
+            </article>
+            <article class = "margin">
+                <h2>창학이념과 교육목표</h2>
+                <h3>인격도야, 진리탐구, 사회봉사</h3>
+                <p>우리 대학교는 1954년 조국부강, 민족번영의 염원으로 개교하여 창의, 근면, 봉사의 창학정신을 구현하기 위한 인격도야, 진리탐구, 사회봉사의 3대교육 이념을 표방하고 있다.</p>
+                <p>이는 교훈 「眞」과 함께 연구하는 대학으로서의 참된 인간 수련을 통하여 국가와 인류사회 발전에 공헌하려는 의욕적 자세와 세계로 웅비하는 발전 「仁荷」의 의지 및 진리 탐구를 위한 학문에의 열정을 집약한 것이다. 위의 이념을 기초로 우리 대학은 인격을 도야하고, 건전한 사상을 함양하는 동시에 심오한 학술이론과 그 응용방법을 연구, 교수하여 국가와 인류사회발전에 공헌할 수 있는 지도적 인재양성을 교육목적으로 두고 있다.</p>
+
+            </article>
+          
+        </section>
+        </body>
