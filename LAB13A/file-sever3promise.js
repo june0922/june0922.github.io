@@ -19,7 +19,6 @@ const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer( async (req, resp) => {
-    ...
     // read the file
     try {
     const contents = await fsProm.readFile(localFile);
@@ -37,3 +36,4 @@ const server = http.createServer( async (req, resp) => {
     catch {
     output500Error(resp);
     }
+}
